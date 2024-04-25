@@ -5,36 +5,36 @@
     function pulaLinha() {
 
         document.write("<br>");
+        document.write("<br>");
 
     }
 
     function mostra(frase) {
 
         document.write(frase);
+        pulaLinha();
     }
         var nomeUsuario = prompt("Insira seu nome, jogador: ");
         var numeroPensado = Math.round(Math.random() * 10);
         var tentativas = 1;
 
-        while (tentativas <= 3) { 
+        while(tentativas <= 3) { 
 
-            if (chuteUsuario == numeroPensado) {
+            var chute = parseInt(prompt("Digite seu número de chute: "));
 
-                    var chuteUsuario = parseInt(prompt( nomeUsuario + ", escolha um número aleatório: "));
+            if(chute == numeroPensado) {
 
-                    mostra(nomeUsuario + ", você acertou! Vamos jogar mais? ");
-                    pulaLinha();
-
-        } else {
-            
-            mostra(nomeUsuario + " escolheu um número maior do que foi pensado... Errou! ");
-            pulaLinha();
-
-        }
+                mostra("Você ACERTOU, " + nomeUsuario + ". Parabéns! O número pensado foi: " + "(" + numeroPensado + ")" + ". Vamos jogar de novo? ");
+                break;
+               
+            } else {
+                
+                mostra("Você ERROU, " + nomeUsuario + "! Tente novamente.");
+                
+            }
             tentativas++;
-
          }
 
-         mostra("Fim!");
+      
 
 </script>
