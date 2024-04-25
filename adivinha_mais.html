@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    function pulaLinha() {
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var nomeJogador = prompt("Insira seu nome: ");
+    var segredo = Math.round(Math.random() * 10);
+    var input = document.querySelector("input");
+    input.focus();
+
+    function verifica() {
+
+        if(input.value == segredo) {
+
+            alert("Você ACERTOU, " + nomeJogador + "! O número secreto é: " + "(" + segredo + ")");
+            
+        } else {
+
+            alert("Você ERROU!!!!!!!! Tente novamente.");
+        }
+
+        input.value = "";
+        input.focus();
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+</script>
