@@ -17,24 +17,31 @@
     }
 
     var nomeJogador = prompt("Insira seu nome: ");
-    var segredo = Math.round(Math.random() * 10);
+    var segredos = [1, 2, 3, 4, 5, 6];
     var input = document.querySelector("input");
     input.focus();
 
     function verifica() {
 
-        if(input.value == segredo) {
+        var achou = false
 
-            alert("Você ACERTOU, " + nomeJogador + "! O número secreto é: " + "(" + segredo + ")");
-            
-        } else {
+        for(var posicao = 0; posicao < segredos.length; posicao++) {
 
-            alert("Você ERROU!!!!!!!! Tente novamente.");
+            if (input.value == segredos[posicao]) 
+            {
+                alert("Você ACERTOU, " + nomeJogador + "! Parabéns. Vamos jogar mais? ");
+                achou = true;
+                break;
+            } 
         }
+        if (achou == false) { 
+
+            alert("Você ERROU, " + nomeJogador + "! Tente jogar novamente.");
 
         input.value = "";
         input.focus();
-    }
+         }
+     }
 
     var button = document.querySelector("button");
 
